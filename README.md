@@ -1,2 +1,3 @@
-# portforlio
-public repo of my portfolio
+# ipp-data-analytics
+
+graphical interface for transactions in kibana
