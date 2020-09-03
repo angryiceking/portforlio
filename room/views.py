@@ -7,4 +7,7 @@ class Lounge(View):
 
     def get(self, request):
         return render(request, 'index.html', status=200)
+
+    def post(self, request):
+        return HttpResponse('congrats!', status=200)
         
