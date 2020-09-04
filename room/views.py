@@ -11,3 +11,7 @@ class Lounge(View):
     def post(self, request):
         return HttpResponse('congrats!', status=200)
         
+class Portfolio(View):
+
+    def get(self, request):
+        return render(request, 'portfolio.html', status=200)
