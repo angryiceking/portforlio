@@ -3,8 +3,11 @@ import json, random, requests, shutil
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.views.generic import ListView, DetailView, View
+from random_word import RandomWords
 
 from .models import *
+
+r = RandomWords()
 
 # Create your views here.
 class Lounge(View):
@@ -50,9 +53,10 @@ class Create(View):
             'gridy',
             'code',
         ]
-
-        autogen_name = requests.get('https://random-word-api.herokuapp.com/word?number=2')
-        name_set = ' '.join(autogen_name.json())
+        
+        autogen_name = r.get_random_words(limit=2)
+        #autogen_name = requests.get('https://random-word-api.herokuapp.com/word?number=2')
+        name_set = ' '.join(autogen_name)
 
         profile_name = name
         avatar_url = 'https://avatars.dicebear.com/api/{}/{}.svg'.format(random.choice(sprites), name)
