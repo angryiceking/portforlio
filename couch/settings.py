@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'room'
+    'room',
+    'games.pvp',
+    'games.adventure'
 ]
 
 MIDDLEWARE = [
